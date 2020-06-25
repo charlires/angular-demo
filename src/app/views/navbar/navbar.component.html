@@ -7,18 +7,9 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li [ngClass]="{'active': isHomeActive}" class="nav-item">
-                <a (click)="disableAll(); isHomeActive=true" routerLink="/home" class="nav-link" href="#">Home</a>
-            </li>
-            <li [ngClass]="{'active': isLinkActive}" class="nav-item">
-                <a (click)="disableAll(); isLinkActive=true" routerLink="/link" class="nav-link" href="#">Link</a>
-            </li>
-            <li [ngClass]="{'active': isTextActive}" class="nav-item">
-                <a (click)="disableAll(); isTextActive=true" routerLink="/text" class="nav-link" href="#">Text</a>
-            </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li> -->
+            <navbar-item (click)="disableAll()" *ngFor=" let navItem of navItems" [text]="navItem.text"
+                [route]="navItem.route">
+            </navbar-item>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Dropdown</a>

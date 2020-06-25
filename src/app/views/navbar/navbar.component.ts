@@ -8,18 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  isHomeActive: boolean
-  isLinkActive: boolean
-  isTextActive: boolean
+  navItems: NavItem[]
   constructor() { }
 
   disableAll() {
-    this.isHomeActive = false
-    this.isLinkActive = false
-    this.isTextActive = false
   }
 
   ngOnInit(): void {
-    this.isHomeActive = true
+    this.navItems = [
+      new NavItem("Home", "/"),
+      new NavItem("Link", "/link"),
+      new NavItem("Text", "/text"),
+    ]
   }
+}
+
+class NavItem {
+  constructor(
+    public text: string,
+    public route: string,
+  ) { }
+
 }

@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LinkComponent } from './views/link/link.component';
 import { CardComponent } from './components/card/card.component';
 import { TextComponent } from './views/text/text.component';
+import { ItemComponent } from './views/navbar/item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TextComponent } from './views/text/text.component';
     NavbarComponent,
     LinkComponent,
     CardComponent,
-    TextComponent
+    TextComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
